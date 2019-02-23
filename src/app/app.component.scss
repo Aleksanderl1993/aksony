@@ -1,3 +1,12 @@
 header {
-    background-image: url("../assets/");
+    background-image: url("../assets/header_bg.jpg");
+    height: 650px;
+}
+header h1 {color: aliceblue}
+
+//  carousel
+
+.carousel-content {
+    background-color: gray;
+    min-height: 200px;
 }

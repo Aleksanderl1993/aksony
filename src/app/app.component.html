@@ -1,7 +1,85 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <header></header>
-  <button type="button" class="btn btn-warning">Przycisk</button>
+    <header class="d-flex align-items-center justify-content-center">
+        <h1 class="display-4">Analiza morfologiczna zabawki</h1>
+    </header>
+    <div class="jumbotron ">
+        <h2 class="display-4">Zaprojektuj nową zabawkę</h2>
+        <p class="lead">Poniżej masz do wyboru 3 aspekty. Znajdź swoje roziwiązanie!</p>
+        <hr class="my-4">
+    </div>
+    <!--  1st item  -->
+    <h2>1. Wybierz wiek osoby</h2>
+    <div id="carouselExampleControls" class="carousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-content">
+                    <div>
+                        <p>{{carouselItem.age}}</p>
+                        <img src="{{carouselItem.photoUrl}}" alt="">
+                        <label for="age{{carouselItem.id}}">Wybierz...
+                            <input (change)="isCheckedFromCarouselOne($event)" id="age{{carouselItem.id}}" type="checkbox">
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-content">bbb</div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-content">cccc</div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--    2nd item    -->
+    <div *ngIf="if1stSelected">
+        <h2>2. Wybierz typ zabawki</h2>
+        <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <div>
+                            <p>{{carouselItem.age}}</p>
+                            <img src="{{carouselItem.photoUrl}}" alt="">
+                            <label for="ageCheckbox2">Wybierz...
+                                <input id="ageCheckbox2" type="checkbox">
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">bbb</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">cccc</div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
 </div>
 
 <router-outlet></router-outlet>
