@@ -1,13 +1,7 @@
-import {Component, HostBinding} from '@angular/core';
-import {Age} from './model';
+import {Component} from '@angular/core';
 import {Material} from './model';
 import {Person} from './model';
 import {MaterialFunction} from './model';
-
-import {CommonModule} from '@angular/common';
-import {NgModel} from '@angular/forms';
-import {FormsModule} from '@angular/forms';
-import {compareArrays} from 'ngx-bootstrap/chronos/utils/compare-arrays';
 
 @Component({
     selector: 'app-root',
@@ -16,13 +10,6 @@ import {compareArrays} from 'ngx-bootstrap/chronos/utils/compare-arrays';
 })
 export class AppComponent {
     title = 'aksony';
-
-    carouselItem: Age = {
-        id: 1,
-        age: 'Junior',
-        photoUrl: '../assets/person.png'
-    };
-
 
     //  person object
 
@@ -61,14 +48,8 @@ export class AppComponent {
     isCheckedFromCarouselOne(person) {
 
         if (event.target.checked) {
-            let completeArrayA;
             this.if1stSelected = true;
-            completeArrayA = person.id;
             console.log(person.id);
-            console.log(completeArrayA);
-
-
-
         } else {
             this.if1stSelected = false;
 
@@ -78,36 +59,29 @@ export class AppComponent {
     isCheckedFromCarouselTwo(material) {
 
         if (event.target.checked) {
-            let completeArrayB;
             this.if2ndSelected = true;
-            completeArrayB = material.id;
             console.log(material.id);
-            console.log(completeArrayB);
-
         } else {
             this.if2ndSelected = false;
-
         }
     }
 
     isCheckedFromCarouselThree(Functionobject) {
 
         if (event.target.checked) {
-            let completeArrayC;
             this.if3rdSelected = true;
-            completeArrayC = Functionobject.id;
             console.log(Functionobject.id);
-            console.log(completeArrayC);
-
         } else {
             this.if3rdSelected = false;
 
         }
     }
 
-
-
 //    show on console completeArray
+
+    completeOrder() {
+        console.log('Index 1: ' + Material.id);
+    }
 
 }
 
