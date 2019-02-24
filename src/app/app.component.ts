@@ -39,12 +39,6 @@ export class AppComponent {
     if2ndSelected: boolean = false;
     if3rdSelected: boolean = false;
 
-    // completeArray: Array<number> = [];
-
-    // completeArrayA = '';
-    // completeArrayB = '';
-    // completeArrayC = '';
-
     isCheckedFromCarouselOne(person) {
 
         if (event.target.checked) {
@@ -79,9 +73,12 @@ export class AppComponent {
 
 //    show on console completeArray
 
-    completeOrder() {
-        console.log('Index 1: ' + Material.id);
-    }
+
+        generateToy = false;
+
+        completeOrder() {
+            this.generateToy = true;
+        }
 
 }
 

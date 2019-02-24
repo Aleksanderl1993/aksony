@@ -116,7 +116,11 @@
     </div>
     <br>
     <div class="d-flex justify-content-center">
-        <button *ngIf="if3rdSelected" type="button" class="btn btn-info" (click)="completeOrder()">Generuj zabawkę</button>
+        <button *ngIf="if3rdSelected" type="button" class="btn btn-info" (click)="completeOrder()">Generuj zabawkę
+        </button>
+    </div>
+    <div *ngIf="generateToy">
+        <p>Tutaj zrobiłbym element z wygenerowaną zabawką w zależności od wybranych właściwości.</p>
     </div>
 
 
