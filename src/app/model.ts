@@ -5,11 +5,18 @@ export interface Age {
 }
 
 export interface Material {
-    type: string;
+    id: number;
+    material: string;
     photoUrl: string;
 }
 
-export interface ToyFunction {
-    type: string;
-    description: string;
+export interface Person {
+    id: number;
+    age: string;
+    photoUrl: string;
+}
+export interface MaterialFunction {
+    id: number;
+    function: string;
+    photoUrl: string;
 }

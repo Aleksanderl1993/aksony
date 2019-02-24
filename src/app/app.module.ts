@@ -10,16 +10,23 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {ModalModule} from 'ngx-bootstrap/modal';
 
+// do obsługi ngModel:
+
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+
 @NgModule({
     declarations: [
         AppComponent
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         AppRoutingModule,
         BsDropdownModule.forRoot(),
         TooltipModule.forRoot(),
-        ModalModule.forRoot()
+        ModalModule.forRoot(),
+        CommonModule
     ],
     providers: [],
     bootstrap: [AppComponent]
