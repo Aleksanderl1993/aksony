@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 import {Age} from './model';
 import {Material} from './model';
 import {Person} from './model';
@@ -35,33 +35,39 @@ export class AppComponent {
     //  meterial object
 
     materialObject: Material[] = [
-        {id: 1, material: 'Drewno', photoUrl: '../assets/material.png'},
-        {id: 2, material: 'Plastik', photoUrl: '../assets/material.png'},
-        {id: 3, material: 'Metal', photoUrl: '../assets/material.png'}
+        {id: 4, material: 'Drewno', photoUrl: '../assets/material.png'},
+        {id: 5, material: 'Plastik', photoUrl: '../assets/material.png'},
+        {id: 6, material: 'Metal', photoUrl: '../assets/material.png'}
     ];
 
     //  function object
 
     functionObject: MaterialFunction[] = [
-        {id: 1, function: 'Ćwiczenie pamięci', photoUrl: '../assets/function.png'},
-        {id: 2, function: 'Ćwiczenie wyobraźni', photoUrl: '../assets/function.png'},
-        {id: 3, function: 'Zabicie czasu :)', photoUrl: '../assets/function.png'}
+        {id: 7, function: 'Ćwiczenie pamięci', photoUrl: '../assets/function.png'},
+        {id: 8, function: 'Ćwiczenie wyobraźni', photoUrl: '../assets/function.png'},
+        {id: 9, function: 'Zabicie czasu :)', photoUrl: '../assets/function.png'}
     ];
 
     if1stSelected: boolean = false;
     if2ndSelected: boolean = false;
     if3rdSelected: boolean = false;
 
-    completeArray: Array<number> = [];
+    // completeArray: Array<number> = [];
+
+    // completeArrayA = '';
+    // completeArrayB = '';
+    // completeArrayC = '';
 
     isCheckedFromCarouselOne(person) {
 
         if (event.target.checked) {
+            let completeArrayA;
             this.if1stSelected = true;
-
-            this.completeArray.push(person.id);
+            completeArrayA = person.id;
             console.log(person.id);
-            console.log(this.completeArray + 'haha');
+            console.log(completeArrayA);
+
+
 
         } else {
             this.if1stSelected = false;
@@ -72,11 +78,11 @@ export class AppComponent {
     isCheckedFromCarouselTwo(material) {
 
         if (event.target.checked) {
+            let completeArrayB;
             this.if2ndSelected = true;
-
-            this.completeArray.push(material.id);
+            completeArrayB = material.id;
             console.log(material.id);
-            console.log(this.completeArray + 'haha');
+            console.log(completeArrayB);
 
         } else {
             this.if2ndSelected = false;
@@ -87,17 +93,19 @@ export class AppComponent {
     isCheckedFromCarouselThree(Functionobject) {
 
         if (event.target.checked) {
+            let completeArrayC;
             this.if3rdSelected = true;
-
-            this.completeArray.push(Functionobject.id);
+            completeArrayC = Functionobject.id;
             console.log(Functionobject.id);
-            console.log(this.completeArray + 'haha');
+            console.log(completeArrayC);
 
         } else {
             this.if3rdSelected = false;
 
         }
     }
+
+
 
 //    show on console completeArray
 

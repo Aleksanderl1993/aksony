@@ -14,10 +14,12 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import { MakeInputDisabledDirective } from './make-input-disabled.directive';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        MakeInputDisabledDirective
     ],
     imports: [
         BrowserModule,

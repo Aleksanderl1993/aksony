@@ -20,9 +20,9 @@
                         <img src="{{person.photoUrl}}" alt="">
                         <p>{{person.age}}</p>
 
-                        <label for="age{{carouselItem.id}}">Wybierz...
+                        <label for="age{{person.id}}">Wybierz...
                             <input (change)="isCheckedFromCarouselOne(person)" class="disabled"
-                                   id="age{{carouselItem.id}}" type="checkbox">
+                                   id="age{{person.id}}" type="radio" name="optionOne" value="{{person.id}}">
                         </label>
 
                     </div>
@@ -52,9 +52,10 @@
                             <img src="{{material.photoUrl}}" alt="">
                             <p>{{material.material}}</p>
 
-                            <label for="material{{carouselItem.id}}">Wybierz...
-                                <input (change)="isCheckedFromCarouselTwo(material)" id="material{{carouselItem.id}}"
-                                       type="checkbox">
+                            <label for="material{{material.id}}">Wybierz...
+                                <input (change)="isCheckedFromCarouselTwo(material)"
+                                       id="material{{material.id}}"
+                                       type="radio" name="optionTwo" value="{{material.id}}">
                             </label>
 
                         </div>
@@ -80,22 +81,27 @@
         <div id="carouselExampleControls3" class="carousel carousel-box" data-ride="carousel">
             <div class="carousel-inner">
 
-                <div class="carousel-item" *ngFor="let Functionobject of functionObject; let isFirst = first"
-                     [class.active]="isFirst">
-                    <div class="carousel-content">
+                <form action="">
 
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <img src="{{Functionobject.photoUrl}}" alt="">
-                            <p>{{Functionobject.function}}</p>
+                    <div class="carousel-item" *ngFor="let Functionobject of functionObject; let isFirst = first"
+                         [class.active]="isFirst">
+                        <div class="carousel-content">
 
-                            <label for="Functionobject{{carouselItem.id}}">Wybierz...
-                                <input (change)="isCheckedFromCarouselThree(Functionobject)" id="Functionobject{{carouselItem.id}}"
-                                       type="checkbox"/>
-                            </label>
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                <img src="{{Functionobject.photoUrl}}" alt="">
+                                <p>{{Functionobject.function}}</p>
 
+                                <label for="Functionobject{{Functionobject.id}}">Wybierz...
+                                    <input (change)="isCheckedFromCarouselThree(Functionobject)"
+                                           id="Functionobject{{Functionobject.id}}"
+                                           type="radio" name="optionThree" value="{{Functionobject.id}}">
+                                </label>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                </form>
 
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
@@ -110,7 +116,7 @@
     </div>
     <br>
     <div class="d-flex justify-content-center">
-        <button *ngIf="if3rdSelected" type="button" class="btn btn-info">Generuj zabawkę</button>
+        <button *ngIf="if3rdSelected" type="button" class="btn btn-info" (click)="completeOrder">Generuj zabawkę</button>
     </div>
 
 
