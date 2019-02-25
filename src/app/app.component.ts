@@ -41,7 +41,7 @@ export class AppComponent {
 
     isCheckedFromCarouselOne(person) {
 
-        if (event.target.checked) {
+        if (event.target) {
             this.if1stSelected = true;
             console.log(person.id);
         } else {
@@ -52,7 +52,7 @@ export class AppComponent {
 
     isCheckedFromCarouselTwo(material) {
 
-        if (event.target.checked) {
+        if (event.target) {
             this.if2ndSelected = true;
             console.log(material.id);
         } else {
@@ -62,7 +62,7 @@ export class AppComponent {
 
     isCheckedFromCarouselThree(Functionobject) {
 
-        if (event.target.checked) {
+        if (event.target) {
             this.if3rdSelected = true;
             console.log(Functionobject.id);
         } else {
